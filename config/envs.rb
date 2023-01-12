@@ -1,2 +1,2 @@
 ENV['db_password'] = "mysecretpassword"
-ENV['db_password'] = "postgres"
+ENV['db_username'] = "postgres"
