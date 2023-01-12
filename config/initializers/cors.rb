@@ -7,7 +7,14 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins ENV.fetch("frontend")
+    origins 'https://pair-todo.geografialinks.com'
+
+    resource "*",
+      headers: :any,
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
+  end
+  allow do
+    origins 'https://pair-todo.netlify.app'
 
     resource "*",
       headers: :any,

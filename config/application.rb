@@ -17,6 +17,7 @@ require "action_cable/engine"
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
+# Bundler.require(:default, :assets, Rails.env)
 
 module Backend
   class Application < Rails::Application
