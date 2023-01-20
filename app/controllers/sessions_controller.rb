@@ -9,22 +9,21 @@ class SessionsController < ApplicationController
       render json: { login: true, username: user.username },
       status: :ok
     else
-      render json: { message: 'Wrong password or username. Login failed' }, 
-      status: :unauthorized
+      render json: { message: 'Wrong password or username. Login failed' }
     end
   end
 
   def logged_in
     if @current_user
-      render json: { login: true, username: @current_user.username }, status: :ok
+      render json: { login: true, username: @current_user.username }
     else
-      render json: { login: false, message: 'User not logged in' }, status: :unprocessable_entity
+      render json: { login: false, message: 'User not logged in' }
     end
   end
 
   def destroy
     reset_session
-    render json: { login: false, message: 'User logged out' }, status: :ok
+    render json: { login: false, message: 'User logged out' }
   end
   
   private
