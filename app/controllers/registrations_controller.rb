@@ -1,4 +1,4 @@
-class UsersController < ApplicationController  
+class RegistrationsController < ApplicationController  
   def create
     begin
       user = User.create!(user_params)
@@ -7,6 +7,7 @@ class UsersController < ApplicationController
     end
   
     if user && user.save
+      session[:user_id] = user.id
       render json: { username: user.username }, 
       status: :created
     else
