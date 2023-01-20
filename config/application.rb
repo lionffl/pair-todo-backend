@@ -37,8 +37,12 @@ module Backend
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
     # This also configures session_options for use below
-    config.session_store :cookie_store, key: '_auth_app', domain: 'localhost'
-
+    
+    if Rails.env == 'production'
+      config.session_store :cookie_store, key: '_auth_app', domain: 'pair-todo.geografialinks.com'
+    else
+      config.session_store :cookie_store, key: '_auth_app', domain: 'localhost'
+    end
     # Required for all session management (regardless of session_store)
     config.middleware.use ActionDispatch::Cookies
 
