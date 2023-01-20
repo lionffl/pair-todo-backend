@@ -5,9 +5,8 @@ Rails.application.routes.draw do
   delete '/tasks/:id', to: 'tasks#destroy'
   patch '/tasks/:id', to: 'tasks#update'
   
-  # Users and Sessions
+  # Users
   get '/users', to: 'users#index'
   post '/signup', to: 'users#create'
-  post '/signin', to: 'sessions#create'
-  post 'signout', to: 'sessions#destroy'
+  post '/signin', to: 'login#create'
 end

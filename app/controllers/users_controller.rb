@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticated, only: [:index]
+  
   def create
     begin
       user = User.create!(user_params)
@@ -7,11 +9,11 @@ class UsersController < ApplicationController
     end
   
     if user && user.save
-      token = encode_token({user_id: user.id})
+      token = encode_token({ data: user.id })
       render json: { username: user.username, token: token }, 
       status: :created
     else
-      render json: { errors: messages }, 
+      render json: { messages: messages }, 
       status: :unprocessable_entity
     end
   end
@@ -24,6 +26,6 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.permit(:username, :password, :password_confirmation, :secret_question, :secret_answer)
+    params.required(:user).permit(:username, :password, :password_confirmation, :secret_question, :secret_answer)
   end
 end
