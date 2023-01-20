@@ -8,5 +8,5 @@ Rails.application.routes.draw do
   # Users
   get '/users', to: 'users#index'
   post '/signup', to: 'users#create'
-  post '/signin', to: 'login#create'
+  post '/signin', to: 'sessions#create'
 end

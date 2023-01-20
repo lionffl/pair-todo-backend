@@ -1,6 +1,4 @@
-class UsersController < ApplicationController
-  before_action :authenticated, only: [:index]
-  
+class UsersController < ApplicationController  
   def create
     begin
       user = User.create!(user_params)
@@ -9,8 +7,7 @@ class UsersController < ApplicationController
     end
   
     if user && user.save
-      token = encode_token({ data: user.id })
-      render json: { username: user.username, token: token }, 
+      render json: { username: user.username }, 
       status: :created
     else
       render json: { messages: messages }, 
