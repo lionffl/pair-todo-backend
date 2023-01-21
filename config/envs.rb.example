@@ -1,0 +1,3 @@
+ENV['db_password'] = "password"
+ENV['db_username'] = "postgres"
+ENV['secret'] = "secret"
