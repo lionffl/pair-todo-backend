@@ -1,6 +1,6 @@
 # Pair Todo - Backend
 
-This project is as backend application of a simple todo list. In order to work properly, this application needs a frontend app. [Here](https://github.com/lionffl/pair-todo-frontend) you can find a repository with a React App ready to work as frontend.
+This project is a backend application of a simple todo list. In order to work properly, the application needs a frontend app. [Here](https://github.com/lionffl/pair-todo-frontend) you can find a repository with a React App ready to work as frontend.
 
 ## Prerequisites
 
