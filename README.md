@@ -1,24 +1,27 @@
-# README
+# Pair Todo - Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This project is as backend application of a simple todo list. In order to work properly, this application needs a frontend app. Here you can find a repository with a React App ready to work as frontend.
 
-Things you may want to cover:
+## Prerequisites
 
-* Ruby version
+* Ruby 3.2.0
+* Rails 7.0.4
+* Postgres
+* Docker
+* Docker-compose
 
-* System dependencies
+## Installation and basic usage
 
-* Configuration
+* Clone repository: `git clone git@github.com:lionffl/pair-todo-backend.git`
+* Navigate to project folder: `cd pair-todo-backend`
+* Install the required dependencies: `bundle install`
+* Set up environment variables by renaming `config/envs.rb.example` to `envs.rb`
+* Run postgresql container: `docker-compose up`
+* Set up the database: `rails db:create`, `rails db:migrate`
+* Start the server: `rails server`
 
-* Database creation
+The server should now be running at http://localhost:3000.
 
-* Database initialization
+## Postman Collection
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can import the file `Pair-todo.postman_collection.json` on your Postman client and use as request reference.
