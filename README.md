@@ -25,3 +25,7 @@ The server should now be running at http://localhost:3000.
 ## Postman Collection
 
 You can import the file `Pair-todo.postman_collection.json` on your Postman client and use as request reference.
+
+## Contact
+
+* lionffl@gmail.com / felipelima@geografialinks.com
