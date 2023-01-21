@@ -38,15 +38,11 @@ module Backend
     config.api_only = true
     # This also configures session_options for use below
     
-    if Rails.env == 'production'
-      config.session_store :cookie_store, key: '_auth_app', domain: 'pair-todo.geografialinks.com'
-    else
-      config.session_store :cookie_store, key: '_auth_app', domain: 'localhost'
-    end
+    config.session_store :cookie_store, key: '_auth_app', domain: '.geografialinks.com'
+
     # Required for all session management (regardless of session_store)
     config.middleware.use ActionDispatch::Cookies
 
     config.middleware.use config.session_store, config.session_options
-
   end
 end

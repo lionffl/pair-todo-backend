@@ -7,13 +7,8 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    
-    if Rails.env == 'production'
-      origins 'https://pair-todo.geografialinks.com/'
-    else
-      origins 'http://localhost:3001'
-    end
-
+    origins 'https://pair-todo.geografialinks.com', 'http://localhost:3001'
+  
     resource "*",
       headers: :any,
       methods: [:get, :post, :put, :patch, :delete, :options, :head],
