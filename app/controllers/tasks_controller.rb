@@ -31,7 +31,7 @@ class TasksController < ApplicationController
   private
 
   def task_params
-    params.require(:task).permit(:description, :completed)
+    params.require(:task).permit(:user_id, :description, :completed)
   end
 
   def set_task
@@ -39,6 +39,6 @@ class TasksController < ApplicationController
   end
 
   def get_tasks
-    @tasks = Task.all.order(:created_at)
+    @tasks = @current_user.tasks.order(:created_at)
   end
 end
