@@ -16,7 +16,7 @@ This project is as backend application of a simple todo list. In order to work p
 * Navigate to project folder: `cd pair-todo-backend`
 * Install the required dependencies: `bundle install`
 * Set up environment variables by renaming `config/envs.rb.example` to `envs.rb`
-* Run postgresql container: `docker-compose up`
+* Run postgresql container: `docker-compose up -d`
 * Set up the database: `rails db:create`, `rails db:migrate`
 * Start the server: `rails server`
 
