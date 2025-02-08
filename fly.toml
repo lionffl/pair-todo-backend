@@ -4,7 +4,7 @@
 #
 
 app = 'pair-todo-backend'
-primary_region = 'gru'
+primary_region = 'iad'
 console_command = '/rails/bin/rails console'
 
 [build]
